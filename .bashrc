@@ -117,3 +117,7 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# ssh-agent
+eval "$(ssh-agent -s)" > /dev/null 2>&1
+ssh-add ~/.ssh/id_rsa_github
