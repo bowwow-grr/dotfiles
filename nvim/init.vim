@@ -39,7 +39,13 @@ if dein#check_install()
 endif
 
 " End dein Scripts------------------------}}}
-
+"
+" plugin setting{{{
+" NERDTree{{{
+let g:NERDTreeShowBookmarks=1
+map <C-n> :NERDTreeToggle<CR>
+"}}}
+"}}}
 " setting
 set encoding=utf-8
 set fileencodings=utf-8,sjis
@@ -53,11 +59,15 @@ set virtualedit=onemore
 set smartindent
 set visualbell
 set showmatch
+set matchtime=1
 set laststatus=2
 set wildmode=list:longest
 nnoremap j gj
 nnoremap k gk
+vnoremap j gj
+vnoremap k gk
 au FileType vim setlocal foldmethod=marker
+nnoremap Y y$
 
 " Tab
 set list listchars=tab:\>\- 
