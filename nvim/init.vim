@@ -40,12 +40,6 @@ endif
 
 " End dein Scripts------------------------}}}
 "
-" plugin setting{{{
-" NERDTree{{{
-let g:NERDTreeShowBookmarks=1
-map <C-n> :NERDTreeToggle<CR>
-"}}}
-"}}}
 " setting
 set encoding=utf-8
 set fileencodings=utf-8,sjis
