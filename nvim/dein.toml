@@ -6,8 +6,10 @@ repo = 'Shougo/denite.nvim'
 
 [[plugins]]
 repo = 'scrooloose/nerdtree'
-hook_add = 'let NERDTreeShowHidden'
-hook_add = 'map <C-n> :NERDTreeToggle<CR>'
+hook_add = '''
+		let g:NERDTreeShowHidden=1
+		map <C-n> :NERDTreeToggle<CR>
+'''
 
 [[plugins]]
 repo = 'itchyny/lightline.vim'
