@@ -5,10 +5,16 @@ repo = 'Shougo/dein.vim'
 repo = 'Shougo/denite.nvim'
 
 [[plugins]]
+repo = 'Shougo/deoplete.nvim'
+hook_add = '''
+		let g:deoplete#enable_at_startup = 1
+'''
+
+[[plugins]]
 repo = 'scrooloose/nerdtree'
 hook_add = '''
 		let g:NERDTreeShowHidden=1
-		map <C-n> :NERDTreeToggle<CR>
+		map <C-m> :NERDTreeToggle<CR>
 '''
 
 [[plugins]]
@@ -16,6 +22,22 @@ repo = 'itchyny/lightline.vim'
 
 [[plugins]]
 repo = 'Shougo/neosnippet.vim'
+hook_add = '''
+		imap <C-k>	<Plug>(neosnippet_expand_or_jump)
+		smap <C-k>	<Plug>(neosnippet_expand_or_jump)
+		xmap <C-k>	<Plug>(neosnippet_expand_target)
+
+		imap <expr><TAB>
+				\ pumvisible() ? "\<C-n>" :
+				\ neosnippet#expandable_or_jumpable() ?
+				\		"\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+		smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+		\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+		if has('conceal')
+				set conceallevel=2 concealcursor=niv
+		endif
+'''
 
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
