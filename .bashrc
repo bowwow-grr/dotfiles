@@ -119,7 +119,21 @@ if ! shopt -oq posix; then
 fi
 
 # ssh-agent
-eval "$(ssh-agent -s)" > /dev/null 2>&1
-ssh-add ~/.ssh/id_rsa_github
+# eval "$(ssh-agent -s)" > /dev/null 2>&1
+# ssh-add ~/.ssh/id_rsa_github
+SSH_KEY_LIFE_TIME_SEC=3600
+SSH_AGENT_FILE=$HOME/.ssh-agent
+SSH_KEY=$HOME/.ssh/id_rsa_github
+test -f $SSH_AGENT_FILE && source $SSH_AGENT_FILE > /dev/null 2>&1
+if [ $( ps -ef | grep ssh-agent | grep -v grep | wc -l ) -eq 0 ]; then
+		ssh-agent -t $SSH_KEY_LIFE_TIME_SEC > $SSH_AGENT_FILE
+		source $SSH_AGENT_FILE > /dev/null 2>&1
+		ssh-add $SSH_KEY
+fi
+
 
 PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
