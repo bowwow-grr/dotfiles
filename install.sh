@@ -1,11 +1,11 @@
 #!/bin/bash
 
-rm -r ~/.config/nvim
-rm ~/.tmux.conf
-rm ~/.bashrc
-rm ~/.bash_logout
+NVIM_DIR=$HOME/.config/nvim
+TMUX_CONF=$HOME/.tmux.conf
+BASHRC=$HOME/.bashrc
+BASH_LOGOUT=$HOME/.bash_logout
 
-ln -s ~/dotfiles/nvim ~/.config/nvim
-ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
-ln -s ~/dotfiles/.bashrc ~/.bashrc
-ln -s ~/dotfiles/.bash_logout ~/.bash_logout
+ln -s ~/dotfiles/nvim $NVIM_DIR
+ln -s ~/dotfiles/.tmux.conf $TMUX_CONF
+ln -s ~/dotfiles/.bashrc $BASHRC
+ln -s ~/dotfiles/.bash_logout $BASH_LOGOUT
