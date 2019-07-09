@@ -1,11 +1,14 @@
 #!/bin/bash
 
+DOTFILES=$HOME/dotfiles
 NVIM_DIR=$HOME/.config/nvim
 TMUX_CONF=$HOME/.tmux.conf
 BASHRC=$HOME/.bashrc
 BASH_LOGOUT=$HOME/.bash_logout
+INIT_EL=$HOME/.emacs.d/init.el 
 
-ln -s ~/dotfiles/nvim $NVIM_DIR
-ln -s ~/dotfiles/.tmux.conf $TMUX_CONF
-ln -s ~/dotfiles/.bashrc $BASHRC
-ln -s ~/dotfiles/.bash_logout $BASH_LOGOUT
+ln -s $DOTFILES/nvim $NVIM_DIR 
+ln -s $DOTFILES/.tmux.conf $TMUX_CONF
+ln -s $DOTFILES/.bashrc $BASHRC
+ln -s $DOTFILES/.bash_logout $BASH_LOGOUT
+ln -s $DOTFILES/init.el $INIT_EL
