@@ -57,9 +57,11 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+#    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\033[01;34m\]\W\[\033[00m\]\$ '
+
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\u@\W\$ '
 fi
 unset color_prompt force_color_prompt
 
@@ -128,7 +130,6 @@ test -f $SSH_AGENT_FILE && source $SSH_AGENT_FILE > /dev/null 2>&1
 if [ $( ps -ef | grep ssh-agent | grep -v grep | wc -l ) -eq 0 ]; then
 		ssh-agent -t $SSH_KEY_LIFE_TIME_SEC > $SSH_AGENT_FILE
 		source $SSH_AGENT_FILE > /dev/null 2>&1
-		ssh-add $SSH_KEY
 fi
 
 
