@@ -66,4 +66,8 @@ hook_add = '''
 repo = 'Shougo/neosnippet-snippets'
 
 [[plugins]]
+repo = 'miyakogi/seiya.vim'
+#hook_add = 'let g:seiya_auto_enable=1'
+
+[[plugins]]
 repo = 'tomasr/molokai'
