@@ -49,6 +49,7 @@ set showcmd
 set number
 set cursorline
 " set cursorcolumn
+set conceallevel=0
 set virtualedit=onemore
 set smartindent
 set visualbell
@@ -62,6 +63,7 @@ vnoremap j gj
 vnoremap k gk
 au FileType vim setlocal foldmethod=marker
 nnoremap Y y$
+let g:vim_json_syntax_conceal = 0
 
 " Tab
 set list listchars=tab:\>\- 
