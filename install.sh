@@ -7,6 +7,7 @@ TMUX_CONF=$HOME/.tmux.conf
 BASHRC=$HOME/.bashrc
 BASH_LOGOUT=$HOME/.bash_logout
 INIT_EL=$HOME/.emacs.d/init.el 
+POWERLINE_SHELL_DIR=$HOME/.config/powerline-shell
 
 if [ ! -e ${DOTCOFIG} ]; then eval 'mkdir ${DOTCOFIG}'
 
@@ -15,3 +16,4 @@ ln -s $DOTFILES/.tmux.conf $TMUX_CONF
 ln -s $DOTFILES/.bashrc $BASHRC
 ln -s $DOTFILES/.bash_logout $BASH_LOGOUT
 ln -s $DOTFILES/init.el $INIT_EL
+ln -s $DOTFILES/powerline-shell $POWERLINE_SHELL_DIR
