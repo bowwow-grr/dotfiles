@@ -7,6 +7,14 @@ repo = 'cespare/vim-toml'
 on_ft = ['toml']
 
 [[plugins]]
+repo = 'maxmellon/vim-jsx-pretty'
+on_ft = ['javascript', 'javascript.jsx']
+
+[[plugins]]
+repo = 'mattn/emmet-vim'
+on_ft = ['html']
+
+[[plugins]]
 repo = 'sheerun/vim-polyglot'
 on_ft = ['html', 'html5']
 
