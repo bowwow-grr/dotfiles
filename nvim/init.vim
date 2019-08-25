@@ -66,9 +66,9 @@ nnoremap Y y$
 let g:vim_json_syntax_conceal = 0
 
 " Tab
-set list listchars=tab:\>\- 
+" set list listchars=tab:\>\- 
 set tabstop=2
-set shiftwidth=4
+set shiftwidth=2
 
 " 検索
 set ignorecase
@@ -90,3 +90,23 @@ if has("autocmd")
 				\	endif
 		augroup END
 endif
+
+" window mapping
+nnoremap s <Nop>
+" 画面移動
+nnoremap sj <C-w>j
+nnoremap sk <C-w>k
+nnoremap sl <C-w>l
+nnoremap sh <C-w>h
+" pane移動
+nnoremap sJ <C-w>J
+nnoremap sK <C-w>K
+nnoremap sL <C-w>L
+nnoremap sH <C-w>H
+" 画面分割
+nnoremap ss :split<CR>
+nnoremap sv :vsplit<CR>
+" タブ関連
+nnoremap st :tabnew<CR>
+nnoremap sn gt
+nnoremap sp gT
