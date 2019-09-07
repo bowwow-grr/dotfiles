@@ -76,6 +76,7 @@ call denite#custom#map('insert', '<C-p>', '<denite:move_to_previous_line>', 'nor
 repo = 'itchyny/lightline.vim'
 hook_add = '''
 		let g:lightline = {
+				\ 'colorscheme': 'molokai',
 				\ 'component': {
 				\   'lineinfo': ' %3l:%-2v',
 				\ },
@@ -141,3 +142,6 @@ hook_add = 'map <silent><C-s> :SeiyaEnable<CR>'
 
 [[plugins]]
 repo = 'tomasr/molokai'
+
+[[plugins]]
+repo = 'thinkpixellab/flatland'
