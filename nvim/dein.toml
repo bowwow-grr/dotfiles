@@ -161,3 +161,6 @@ repo = 'tomasr/molokai'
 
 [[plugins]]
 repo = 'thinkpixellab/flatland'
+
+[[plugins]]
+repo = 'thinca/vim-showtime'
