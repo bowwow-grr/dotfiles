@@ -108,22 +108,22 @@ alias np='nano -w PKGBUILD'
 alias more=less
 alias vi='nvim'
 
-function powerline_precmd() {
-    PS1="$(powerline-shell --shell zsh $?)"
-}
+#function powerline_precmd() {
+#    PS1="$(powerline-shell --shell zsh $?)"
+#}
 
-function install_powerline_precmd() {
-  for s in "${precmd_functions[@]}"; do
-    if [ "$s" = "powerline_precmd" ]; then
-      return
-    fi
-  done
-  precmd_functions+=(powerline_precmd)
-}
+#function install_powerline_precmd() {
+#"  for s in "${precmd_functions[@]}"; do
+#    if [ "$s" = "powerline_precmd" ]; then
+#      return
+#    fi
+#  done
+#  precmd_functions+=(powerline_precmd)
+#}
 
-if [ "$TERM" != "linux" ]; then
-    install_powerline_precmd
-fi
+#if [ "$TERM" != "linux" ]; then
+#    install_powerline_precmd
+#fi
 
 source /usr/share/nvm/init-nvm.sh
 export PATH=$PATH:~/.yarn/bin
