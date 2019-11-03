@@ -73,6 +73,9 @@ call denite#custom#map('insert', '<C-p>', '<denite:move_to_previous_line>', 'nor
 '''
 
 [[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
 repo = 'itchyny/lightline.vim'
 hook_add = '''
 		let g:lightline = {
