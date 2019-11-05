@@ -110,3 +110,5 @@ nnoremap sv :vsplit<CR>
 nnoremap st :tabnew<CR>
 nnoremap sn gt
 nnoremap sp gT
+" タグ
+set tags=tags;$HOME
