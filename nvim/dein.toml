@@ -70,6 +70,9 @@ command! Dprev execute(':Denite -resume -buffer-name=grep-buffer-denite -cursor-
 
 call denite#custom#map('insert', '<C-n>', '<denite:move_to_next_line>', 'noremap')
 call denite#custom#map('insert', '<C-p>', '<denite:move_to_previous_line>', 'noremap')
+
+nnoremap <silent> <Space>f :Denite file/rec<CR>
+nnoremap <silent> <Space>g :Dgrep<CR>
 '''
 
 [[plugins]]
@@ -77,7 +80,7 @@ repo = 'Shougo/defx.nvim'
 on_cmd = 'Defx'
 depends = ['defx-icons', 'defx-git']
 hook_add = '''
-	nnoremap <silent> <Space>f :<C-u>Defx -listed -resume -buffer-name=tab`tabpagenr()`<CR>
+	nnoremap <silent> <Space>n :<C-u>Defx -listed -resume -buffer-name=tab`tabpagenr()`<CR>
 
 	\call defx#custom#option('_', {
 	\ 'columns': 'indent:git:icons:filename',
