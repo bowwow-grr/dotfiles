@@ -160,6 +160,9 @@ hook_add = '''
 repo = 'tpope/vim-fugitive'
 
 [[plugins]]
+repo = 'equalsraf/neovim-gui-shim'
+
+[[plugins]]
 repo = 'itchyny/lightline.vim'
 hook_add = '''
 		let g:lightline = {
@@ -244,7 +247,21 @@ repo = 'Shougo/neosnippet-snippets'
 [[plugins]]
 repo = 'miyakogi/seiya.vim'
 #hook_add = 'let g:seiya_auto_enable=1'
-hook_add = 'map <silent><C-s> :SeiyaEnable<CR>'
+hook_add = '''
+map <silent><C-s> :Toumei<CR>
+
+command! Toumei call s:toumei()
+function! s:toumei()
+let tm = 0
+	if tm == 0 
+		:SeiyaEnable
+		tm = 1
+	elseif tm == 1 
+		:SeiyaDisable
+		tm = 0
+	endif
+endfunction
+'''
 
 [[plugins]]
 repo = 'tomasr/molokai'

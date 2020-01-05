@@ -8,6 +8,21 @@ Plug 'skanehira/docker.vim'
 
 " colorscheme
 Plug 'tomasr/molokai'
+
+" vim lightline
+Plug 'itchyny/lightline.vim'
+
+" Denite 
+if has('nvim')
+  Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/denite.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+
+" vim-toml
+Plug 'cespare/vim-toml'
 call plug#end()
 
 " open browser command, deafult is 'open'
@@ -37,8 +52,49 @@ let g:docker_registry_auth = {
 "let g:docker_registry_auth = json_decode(join(readfile(s:docker_auth_file), "\n"))
 "
 " NERDTree
-nnoremap <Silent> <C-n> :NERDTreeToggle<CR>
+map <silent><C-n> :NERDTreeToggle<CR>
 
+" vim lightline
+let g:lightline = {
+  \ 'colorscheme': 'molokai',
+  \ 'component': {
+  \   'lineinfo': ' %3l:%-2v',
+  \ },
+  \ 'component_function': {
+  \   'readonly': 'LightlineReadonly',
+  \   'fugitive': 'LightlineFugitive'
+  \ },
+  \ 'separator': { 'left': '', 'right': '' },
+  \ 'subseparator': { 'left': '', 'right': '' }
+  \ }
+function! LightlineReadonly()
+  return &readonly ? '' : ''
+endfunction
+function! LightlineFugitive()
+  if exists('*fugitive#head')
+    let branch = fugitive#head()
+    return branch !=# '' ? ''.branch : ''
+  endif
+  return ''
+endfunction
+
+" Define mappings
+autocmd FileType denite call s:denite_my_settings()
+function! s:denite_my_settings() abort
+  nnoremap <silent><buffer><expr> <CR>
+  \ denite#do_map('do_action')
+  nnoremap <silent><buffer><expr> d
+  \ denite#do_map('do_action', 'delete')
+  nnoremap <silent><buffer><expr> p
+  \ denite#do_map('do_action', 'preview')
+  nnoremap <silent><buffer><expr> q
+  \ denite#do_map('quit')
+  nnoremap <silent><buffer><expr> i
+  \ denite#do_map('open_filter_buffer')
+  nnoremap <silent><buffer><expr> <Space>
+  \ denite#do_map('toggle_select').'j'
+endfunction
+nnoremap <silent> <Space>f :Denite file/rec<CR>
 "}}}
 
 " setting
