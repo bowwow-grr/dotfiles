@@ -61,6 +61,7 @@ nnoremap j gj
 nnoremap k gk
 vnoremap j gj
 vnoremap k gk
+imap jj <Esc>
 au FileType vim setlocal foldmethod=marker
 nnoremap Y y$
 let g:vim_json_syntax_conceal = 0
