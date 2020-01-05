@@ -35,6 +35,9 @@ let g:docker_registry_auth = {
 " if you manage vimrc on GitHub, we recommend using json file.
 "let s:docker_auth_file = expand('~/.docker/docker.vim.json')
 "let g:docker_registry_auth = json_decode(join(readfile(s:docker_auth_file), "\n"))
+"
+" NERDTree
+nnoremap <Silent> <C-n> :NERDTreeToggle<CR>
 
 "}}}
 
@@ -55,6 +58,7 @@ set showmatch
 set matchtime=1
 set laststatus=2
 set wildmode=list:longest
+set belloff=all
 nnoremap j gj
 nnoremap k gk
 vnoremap j gj

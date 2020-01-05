@@ -71,6 +71,8 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 
+au BufNewFile,BufRead *.go set noexpandtab tabstop=4 shiftwidth=4
+
 " 検索
 set ignorecase
 set smartcase
