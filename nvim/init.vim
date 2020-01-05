@@ -69,6 +69,7 @@ let g:vim_json_syntax_conceal = 0
 " set list listchars=tab:\>\- 
 set tabstop=2
 set shiftwidth=2
+set expandtab
 
 " 検索
 set ignorecase
@@ -82,13 +83,13 @@ colorscheme molokai
 
 " カーソル記憶
 if has("autocmd")
-	augroup redhat
-		autocmd BufRead *.txt set tw=78
-		autocmd BufReadPost *
-		\	if line("'\"") > 0 && line ("'\"") <= line("$") |
-		\	exe "normal! g'\"" |
-		\	endif
-	augroup END
+  augroup redhat
+    autocmd BufRead *.txt set tw=78
+    autocmd BufReadPost *
+    \	if line("'\"") > 0 && line ("'\"") <= line("$") |
+    \	exe "normal! g'\"" |
+    \	endif
+  augroup END
 endif
 
 " window mapping
