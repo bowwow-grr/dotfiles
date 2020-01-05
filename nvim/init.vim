@@ -82,13 +82,13 @@ colorscheme molokai
 
 " カーソル記憶
 if has("autocmd")
-		augroup redhat
-				autocmd BufRead *.txt set tw=78
-				autocmd BufReadPost *
-				\	if line("'\"") > 0 && line ("'\"") <= line("$") |
-				\	exe "normal! g'\"" |
-				\	endif
-		augroup END
+	augroup redhat
+		autocmd BufRead *.txt set tw=78
+		autocmd BufReadPost *
+		\	if line("'\"") > 0 && line ("'\"") <= line("$") |
+		\	exe "normal! g'\"" |
+		\	endif
+	augroup END
 endif
 
 " window mapping
