@@ -1,3 +1,6 @@
+" mapleader
+let mapleader = "\<Space>"
+
 "{{{
 call plug#begin('~/.vim/plugged')
 " On-demand loading

@@ -1,3 +1,6 @@
+" mapleader (なんか最初に持ってこないと反映されない)
+let mapleader = "\<Space>"
+
 "dein Script -----------{{{
 if &compatible
 	set nocompatible
