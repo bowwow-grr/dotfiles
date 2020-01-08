@@ -296,8 +296,8 @@ let g:EasyMotion_do_mapping = 0
 
 " Jump to anywhere you want with minimal keystrokes, with just one key binding.
 " `s{char}{label}`
-nnoremap <Leader>e [easymotion-kidou]
-nnoremap [easymotion-kidou]s <Plug>(easymotion-overwin-f)
+nmap <Leader>e [easymotion-kidou]
+nmap [easymotion-kidou]s <Plug>(easymotion-overwin-f)
 " or
 " `s{char}{char}{label}`
 
