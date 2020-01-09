@@ -168,10 +168,25 @@ repo = 'itchyny/lightline.vim'
 hook_add = '''
 		let g:lightline = {
 				\ 'colorscheme': 'molokai',
+        \ 'tabline': {
+        \   'left': [ [ 'bufferinfo' ],
+        \             [ 'separator' ],
+        \             [ 'buffercurrent' ], ],
+        \   'right': [ [ 'close' ], ],
+        \ },
 				\ 'component': {
 				\   'lineinfo': ' %3l:%-2v',
 				\ },
+        \ 'component_expand': {
+        \   'buffercurrent': 'lightline#buffer#buffercurrent',
+        \ },
+        \ 'component_type': {
+        \   'buffercurrent': 'tabsel',
+        \   'bufferbefore': 'raw',
+        \   'bufferafter': 'raw',
+        \ },
 				\ 'component_function': {
+        \   'bufferinfo': 'lightline#buffer#bufferinfo',
 				\   'readonly': 'LightlineReadonly',
 				\   'fugitive': 'LightlineFugitive'
 				\ },
@@ -188,7 +203,26 @@ hook_add = '''
 				endif
 				return ''
 		endfunction
+  let g:lightline_buffer_logo = ' '
+  let g:lightline_buffer_readonly_icon = ''
+  let g:lightline_buffer_modified_icon = '✭'
+  let g:lightline_buffer_git_icon = ' '
+  let g:lightline_buffer_ellipsis_icon = '..'
+  let g:lightline_buffer_expand_left_icon = '◀ '
+  let g:lightline_buffer_expand_right_icon = ' ▶'
+  let g:lightline_buffer_active_buffer_left_icon = ''
+  let g:lightline_buffer_active_buffer_right_icon = ''
+  let g:lightline_buffer_separator_icon = '  '
+  let g:lightline_buffer_enable_devicons = 1
+  let g:lightline_buffer_show_bufnr = 1
+  let g:lightline_buffer_fname_mod = ':t'
 '''
+
+[[plugins]]
+repo = 'taohexxx/lightline-buffer'
+
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
 
 [[plugins]]
 repo = 'vim-syntastic/syntastic'

@@ -48,6 +48,7 @@ set encoding=utf-8
 set fileencodings=utf-8,sjis
 set autoread
 set hidden
+set showtabline=2
 set showcmd
 set number
 set cursorline
@@ -64,6 +65,10 @@ nnoremap j gj
 nnoremap k gk
 vnoremap j gj
 vnoremap k gk
+nnoremap <Space>h 0
+nnoremap <Space>l $
+nnoremap <Left> :bprev<CR>
+nnoremap <Right> :bnext<CR>
 imap jj <Esc>
 au FileType vim setlocal foldmethod=marker
 nnoremap Y y$
