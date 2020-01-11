@@ -23,6 +23,14 @@ repo = 'mattn/emmet-vim'
 on_ft = ['html']
 
 [[plugins]]
+repo = 'yuezk/vim-js'
+on_ft = ['javascript', 'js']
+
+[[plugins]]
+repo = 'maxmellon/vim-jsx-pretty'
+on_ft = ['javascript']
+
+[[plugins]]
 repo = 'ress997/defx-icons'
 
 [[plugins]]
