@@ -2,6 +2,6 @@
 
 dotfiles
 
-```install.sh
+```
 ./install.sh
 ```
