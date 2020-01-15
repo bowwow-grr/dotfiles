@@ -2,6 +2,11 @@
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
+repo = 'neoclide/coc.nvim'
+build = './install.sh nightly'
+#hook_add = 'source ~/.config/nvim/coc-options.vim'
+
+[[plugins]]
 repo = 'Shougo/denite.nvim'
 hook_add = '''
 augroup denite_filter
