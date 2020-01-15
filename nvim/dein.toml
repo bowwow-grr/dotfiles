@@ -171,14 +171,16 @@ hook_add = '''
         \ 'tabline': {
         \   'left': [ [ 'bufferinfo' ],
         \             [ 'separator' ],
-        \             [ 'buffercurrent' ], ],
+        \             [ 'bufferbefore', 'buffercurrent', 'bufferafter' ], ],
         \   'right': [ [ 'close' ], ],
         \ },
 				\ 'component': {
 				\   'lineinfo': ' %3l:%-2v',
 				\ },
         \ 'component_expand': {
+        \   'bufferbefore': 'lightline#buffer#bufferbefore',
         \   'buffercurrent': 'lightline#buffer#buffercurrent',
+        \   'bufferafter': 'lightline#buffer#bufferafter',
         \ },
         \ 'component_type': {
         \   'buffercurrent': 'tabsel',
