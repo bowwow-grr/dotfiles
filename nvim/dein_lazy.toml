@@ -24,11 +24,11 @@ on_ft = ['html']
 
 [[plugins]]
 repo = 'yuezk/vim-js'
-on_ft = ['javascript', 'js']
+on_ft = ['javascript', 'js', 'javascriptreact']
 
 [[plugins]]
 repo = 'maxmellon/vim-jsx-pretty'
-on_ft = ['javascript']
+on_ft = ['javascriptreact']
 
 [[plugins]]
 repo = 'ress997/defx-icons'

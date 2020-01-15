@@ -68,6 +68,8 @@ imap jj <Esc>
 au FileType vim setlocal foldmethod=marker
 nnoremap Y y$
 let g:vim_json_syntax_conceal = 0
+nnoremap <leader>ch :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
+nnoremap <leader>ck :split<CR> :exe("tjump ".expand('<cword>'))<CR>
 
 " Tab
 " set list listchars=tab:\>\- 
@@ -97,6 +99,11 @@ if has("autocmd")
     \	endif
   augroup END
 endif
+
+" カッコ補完
+inoremap {<Enter> {}<Left><CR><ESC><S-o>
+inoremap [<Enter> []<Left><CR><ESC><S-o>
+inoremap (<Enter> ()<Left><CR><ESC><S-o>
 
 " window mapping
 nnoremap s <Nop>

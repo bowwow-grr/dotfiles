@@ -251,6 +251,22 @@ hook_add = '''
 repo = 'Shougo/neosnippet-snippets'
 
 [[plugins]]
+repo = 'alvan/vim-closetag'
+hook_add = '''
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.jsx'
+let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.js'
+let g:closetag_filetypes = 'html,xhtml,phtml,javascriptreact'
+let g:closetag_xhtml_filetypes = 'xhtml,jsx,javascriptreact'
+let g:closetag_emptyTags_caseSensitive = 1
+let g:closetag_regions = {
+    \ 'typescript.tsx': 'jsxRegion,tsxRegion',
+    \ 'javascript.jsx': 'jsxRegion',
+    \ }
+let g:closetag_shortcut = '>'
+let g:closetag_close_shortcut = '<leader>>'
+'''
+
+[[plugins]]
 repo = 'miyakogi/seiya.vim'
 #hook_add = 'let g:seiya_auto_enable=1'
 hook_add = '''
@@ -293,6 +309,9 @@ repo = 'thinca/vim-showtime'
 
 [[plugins]]
 repo = 'skanehira/badapple.vim'
+
+[[plugins]]
+repo = 'soramugi/auto-ctags.vim'
 
 [[plugins]]
 repo = 'easymotion/vim-easymotion'
