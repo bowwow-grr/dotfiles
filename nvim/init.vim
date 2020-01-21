@@ -100,11 +100,6 @@ if has("autocmd")
   augroup END
 endif
 
-" カッコ補完
-inoremap {<Enter> {}<Left><CR><ESC><S-o>
-inoremap [<Enter> []<Left><CR><ESC><S-o>
-inoremap (<Enter> ()<Left><CR><ESC><S-o>
-
 " window mapping
 nnoremap s <Nop>
 " 画面移動
