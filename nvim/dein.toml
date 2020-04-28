@@ -166,9 +166,6 @@ hook_add = '''
 repo = 'tpope/vim-fugitive'
 
 [[plugins]]
-repo = 'equalsraf/neovim-gui-shim'
-
-[[plugins]]
 repo = 'itchyny/lightline.vim'
 hook_add = '''
 		let g:lightline = {
@@ -194,25 +191,6 @@ hook_add = '''
 				return ''
 		endfunction
 '''
-
-[[plugins]]
-repo = 'vim-syntastic/syntastic'
-hook_add = '''
-let g:syntastic_python_checkers = ['pylint']
-'''
-#hook_add = '''
-#set statusline+=%#warningmsg#
-#set statusline+=%{SyntasticStatuslineFlag()}
-#set statusline+=%*
-
-#let g:syntastic_enable_signs = 1
-#let g:syntastic_always_populate_loc_list = 1
-#let g:syntastic_auto_loc_list = 1
-#let g:syntastic_check_on_open = 1
-#let g:syntastic_check_on_wq = 0
-
-#let g:syntastic_javascript_checkers=['eslint']
-#'''
 
 [[plugins]]
 repo = 'thinca/vim-quickrun'
@@ -268,21 +246,6 @@ let g:closetag_shortcut = '>'
 [[plugins]]
 repo = 'miyakogi/seiya.vim'
 #hook_add = 'let g:seiya_auto_enable=1'
-hook_add = '''
-map <silent><C-s> :Toumei<CR>
-
-command! Toumei call s:toumei()
-function! s:toumei()
-let tm = 0
-	if tm == 0 
-		:SeiyaEnable
-		tm = 1
-	elseif tm == 1 
-		:SeiyaDisable
-		tm = 0
-	endif
-endfunction
-'''
 
 [[plugins]]
 repo = 'tomasr/molokai'
@@ -295,12 +258,6 @@ repo = 'iamcco/markdown-preview.nvim'
 on_ft = ['markdown', 'pandoc.markdown', 'rmd']
 build = '''
 cd app && yarn install
-'''
-
-[[plugins]]
-repo = 'glacambre/firenvim'
-hook_post_update = '''
-  call firenvim#install(0)
 '''
 
 [[plugins]]
