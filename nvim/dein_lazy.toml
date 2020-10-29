@@ -14,11 +14,6 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'tbodt/deoplete-tabnine'
-on_event = ['InsertEnter']
-build = './install.sh'
-
-[[plugins]]
 repo = 'mattn/emmet-vim'
 on_ft = ['html']
 

@@ -60,6 +60,7 @@ set showmatch
 set matchtime=1
 set laststatus=2
 set wildmode=list:longest
+set backspace=indent,eol,start
 nnoremap j gj
 nnoremap k gk
 vnoremap j gj
@@ -122,5 +123,4 @@ nnoremap sp gT
 " タグ
 set tags=tags;$HOME
 
-let g:python_host_prog = system('(type pyenv &>/dev/null && echo -n "$(pyenv root)/versions/$(pyenv global | grep python2)/bin/python") || echo -n $(which python2)')
 let g:python_host_prog = system('(type pyenv &>/dev/null && echo -n "$(pyenv root)/versions/$(pyenv global | grep python2)/bin/python") || echo -n $(which python2)')

@@ -1,9 +1,21 @@
 " mapleader
 let mapleader = "\<Space>"
 
-"{{{
+"vimplug {{{
+
+"vim-plugがインストールされていなければインストールする
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.github.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 call plug#begin('~/.vim/plugged')
 " On-demand loading
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+
+Plug 'vim-jp/vimdoc-ja'
+
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
 " docker
@@ -173,3 +185,5 @@ nnoremap sn gt
 nnoremap sp gT
 " タグ
 set tags=tags;$HOME
+
+set helplang=ja,en
