@@ -81,7 +81,7 @@ repo = 'Shougo/defx.nvim'
 on_cmd = 'Defx'
 depends = ['defx-icons', 'defx-git']
 hook_add = '''
-	nnoremap <silent> <Leader>n :<C-u>Defx -listed -resume -buffer-name=tab`tabpagenr()`<CR>
+	nnoremap <silent> <Leader>n :<C-u>Defx -listed -resume -buffer-name=tab`tabpagenr()`<CR> 
 
 	\call defx#custom#option('_', {
 	\ 'columns': 'indent:git:icons:filename',
@@ -156,6 +156,9 @@ hook_add = '''
       \ defx#do_action('change_vim_cwd')
 	endfunction
 '''
+
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'
@@ -254,6 +257,9 @@ cd app && yarn install
 
 [[plugins]]
 repo = 'thinca/vim-showtime'
+
+[[plugins]]
+repo = 'tpope/vim-unimpaired'
 
 [[plugins]]
 repo = 'easymotion/vim-easymotion'
