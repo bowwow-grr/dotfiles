@@ -2,47 +2,34 @@
 let mapleader = "\<Space>"
 
 "dein Script -----------{{{
-if &compatible
-	set nocompatible
+set nocompatible
+
+" Set Dein base path (required)
+let s:dein_base = '/home/yk/.cache/dein'
+let s:dein_src = '/home/yk/.cache/dein/repos/github.com/Shougo/dein.vim'
+
+execute 'set runtimepath+=' . s:dein_src
+
+call dein#begin(s:dein_base)
+let s:toml_dir = expand('~/.config/nvim')
+call dein#load_toml(s:toml_dir . '/dein.toml', {'lazy':0})
+call dein#load_toml(s:toml_dir . '/dein_lazy.toml', {'lazy': 1})
+call dein#end()
+
+if has('filetype')
+  filetype indent plugin on
 endif
 
-let s:cache_home = empty($XDG_CACHE_HOME) ? expand('~/.cache') : $XDG_CACHE_HOME
-
-let s:dein_dir = s:cache_home . '/dein'
-
-let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
-
-if &runtimepath !~# 'dein.vim'
-	if !isdirectory(s:dein_repo_dir)
-		execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
-	endif
-	execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
+if has('syntax')
+  syntax on
 endif
-
-" set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
-
-if dein#load_state(s:dein_dir)
-	call dein#begin(s:dein_dir)
-
-	let s:toml_dir = expand('~/.config/nvim')
-	
-	call dein#load_toml(s:toml_dir . '/dein.toml', {'lazy':0})
-	call dein#load_toml(s:toml_dir . '/dein_lazy.toml', {'lazy': 1})
-
-	call dein#end()
-	call dein#save_state()
-endif
-
-" Required:
-filetype plugin indent on
-syntax enable
 
 if dein#check_install()
-	call dein#install()
+ call dein#install()
 endif
 
 " End dein Scripts------------------------}}}
-"
+
 " setting
 set encoding=utf-8
 set fileencodings=utf-8,sjis
@@ -122,5 +109,3 @@ nnoremap sn gt
 nnoremap sp gT
 " タグ
 set tags=tags;$HOME
-
-let g:python_host_prog = system('(type pyenv &>/dev/null && echo -n "$(pyenv root)/versions/$(pyenv global | grep python2)/bin/python") || echo -n $(which python2)')

@@ -5,39 +5,3 @@ on_ft = ['md', 'markdown']
 [[plugins]]
 repo = 'cespare/vim-toml'
 on_ft = ['toml']
-
-[[plugins]]
-repo = 'Shougo/deoplete.nvim'
-on_event = ['InsertEnter']
-hook_add = '''
-		let g:deoplete#enable_at_startup = 1
-'''
-
-[[plugins]]
-repo = 'mattn/emmet-vim'
-on_ft = ['html']
-
-[[plugins]]
-repo = 'yuezk/vim-js'
-on_ft = ['javascript', 'js', 'javascriptreact']
-
-[[plugins]]
-repo = 'maxmellon/vim-jsx-pretty'
-on_ft = ['javascriptreact']
-
-[[plugins]]
-repo = 'ress997/defx-icons'
-
-[[plugins]]
-repo = 'kristijanhusak/defx-git'
-hook_add = '''
-	let g:defx_git#indicators = {
-		\ 'Modified'  : '+',
-		\ 'Staged'    : '●',
-		\ 'Untracked' : '?',
-		\ 'Renamed'   : '➜',
-		\ 'Unmerged'  : '═',
-		\ 'Deleted'   : 'x',
-		\ 'Unknown'   : '?'
-		\ }
-'''
