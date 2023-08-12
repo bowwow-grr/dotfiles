@@ -151,3 +151,6 @@ export NVM_DIR="$HOME/.nvm"
 export GTK_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 export QT_IM_MODULE=fcitx
+
+  export DENO_INSTALL="/home/yk/.deno"
+  export PATH="$DENO_INSTALL/bin:$PATH"
